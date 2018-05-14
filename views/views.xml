@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="perencanaan.list">
+      <field name="name">Perencanaan list</field>
+      <field name="model">perencanaan.perencanaan</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="perencanaan.action_sch_global">
+      <field name="name">Master Schedule Global</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_sch">
+      <field name="name">Master Schedule</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_kontrak">
+      <field name="name">Kontrak Beli</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_proses">
+      <field name="name">JO Proses</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_proses_child1">
+      <field name="name">OM Siap Turun</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_proses_child2">
+      <field name="name">Data</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_proses_child3">
+      <field name="name">Detail Partai</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_proses_child4">
+      <field name="name">Realisasi Perencanaan</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="perencanaan.action_job_sizing">
+      <field name="name">JO Sizing</field>
+      <field name="res_model">perencanaan.perencanaan</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Perencanaan" id="perencanaan.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Master Schedule Global" id="perencanaan.menu_sch_global" parent="perencanaan.menu_root"/>
+    <menuitem name="Master Schedule" id="perencanaan.menu_sch" parent="perencanaan.menu_root"/>
+    <menuitem name="Kontrak Beli" id="perencanaan.menu_kontrak" parent="perencanaan.menu_root"/>
+    <menuitem name="Job Order" id="perencanaan.menu_job" parent="perencanaan.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="perencanaan.menu_sch_global_list" parent="perencanaan.menu_sch_global"
+              action="perencanaan.action_sch_global"/>
+    <menuitem name="List" id="perencanaan.menu_sch_list" parent="perencanaan.menu_sch"
+              action="perencanaan.action_sch"/>
+    <menuitem name="List" id="perencanaan.menu_kontrak_list" parent="perencanaan.menu_kontrak"
+              action="perencanaan.action_kontrak"/>
+    <menuitem name="JO Proses" id="perencanaan.menu_job_list1" parent="perencanaan.menu_job"
+              action="perencanaan.action_job_proses"/>
+    <menuitem name="OM Siap Turun" id="perencanaan.menu_job_list1_child1" parent="perencanaan.menu_job_list1"
+              action="perencanaan.action_job_proses_child1"/>
+    <menuitem name="Data" id="perencanaan.menu_job_list1_child2" parent="perencanaan.menu_job_list1"
+              action="perencanaan.action_job_proses_child2"/>
+    <menuitem name="Detail Partai" id="perencanaan.menu_job_list1_child3" parent="perencanaan.menu_job_list1"
+              action="perencanaan.action_job_proses_child3"/>
+    <menuitem name="Realisasi Perencanaan" id="perencanaan.menu_job_list1_child4" parent="perencanaan.menu_job_list1"
+              action="perencanaan.action_job_proses_child4"/>
+    <menuitem name="JO Sizing" id="perencanaan.menu_job_list2" parent="perencanaan.menu_job"
+              action="perencanaan.action_job_sizing"/>
+  </data>
+</odoo>
